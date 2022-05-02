@@ -1,13 +1,12 @@
 import axios from 'axios';
+import Link from 'next/link';
 import { useState, useEffect } from 'react'
 import { AiFillWindows } from "react-icons/ai";
 import { FaFirefoxBrowser } from "react-icons/fa";
 
 export default function Card() {
     const [data, setData] = useState([]);
-
     
-
     useEffect(() => {
         axios.get('/api/games').then(res => {
             const results = res.data;
@@ -32,6 +31,7 @@ export default function Card() {
             <div className="container mx-auto -md:max-w-full max-w-5xl flex items-center flex-col px-6 sm:px-0">
                 <div className="page-title bg-gray-400 my-5 w-full p-4 shadow-sm rounded-lg">
                     <h3 className='text-3xl'>List of Game</h3>
+                    <Link href="/"><a>Kembali </a></Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5 w-full">
                     {data.map((game) => (

@@ -64,7 +64,7 @@ export default function Home() {
         </a>
 
         <a
-          href="" target="_blank" rel='noopener noreferrer'>
+          className='flex flex-wrap flex-col' href="" target="_blank" rel='noopener noreferrer'>
           API provided by freetogame. You guys awesome.
         </a>
       </footer>
