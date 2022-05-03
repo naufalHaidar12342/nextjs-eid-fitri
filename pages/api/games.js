@@ -1,6 +1,6 @@
 const { getGames } = require('../../fetchers/games');
 
-export default async function handler(req, res){
+export default async function handler(req, res) {
 	try {
 		const games = await getGames().then(response => response.data);
 
@@ -9,4 +9,5 @@ export default async function handler(req, res){
 		console.log(error)
 		return res.status(500).json({ message: "Internal server error" })
 	}
+
 }

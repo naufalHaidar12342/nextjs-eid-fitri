@@ -4,6 +4,7 @@ import { AiFillWindows } from "react-icons/ai"
 import { FaFirefoxBrowser } from "react-icons/fa"
 import Link from 'next/link'
 
+
 export default function GamesPlatform() {
     const [platformOfGames, setPlatformOfGames] = useState([])
     const [data, setData] = useState([])
@@ -34,7 +35,11 @@ export default function GamesPlatform() {
                 return "Test"
         }
     }
-
+    const filterTheList = (platformName) => {
+        if (platformName === "PC (Windows)") {
+            data.map
+        }
+    }
     return (
         <div className="bg-slate-500">
             <div className="container mx-auto -md:max-w-full max-w-5xl flex items-center flex-col px-6 sm:px-0">
@@ -47,13 +52,13 @@ export default function GamesPlatform() {
                             </a>
                         </Link>
 
-                        <a className="inline-flex items-center rounded-md text-gray-600 bg-gray-100 md:mr-2 mb-2 px-2 md:px-4 py-1 font-bold mr-3">
+                        <button className="inline-flex items-center rounded-md text-gray-600 bg-gray-100 md:mr-2 mb-2 px-2 md:px-4 py-1 font-bold mr-3">
                             <AiFillWindows className="mx-auto " />PC
-                        </a>
-                        <a className="inline-flex items-center rounded-md text-gray-600 bg-gray-100  font-bold md:mr-2 mb-2 px-2 md:px-4 py-1 ">
+                        </button>
+                        <button className="inline-flex items-center rounded-md text-gray-600 bg-gray-100  font-bold md:mr-2 mb-2 px-2 md:px-4 py-1 ">
                             <FaFirefoxBrowser className="mx-auto" />
                             Browser
-                        </a>
+                        </button>
                     </div>
                 </div>
 

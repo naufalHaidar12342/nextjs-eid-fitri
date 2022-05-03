@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react'
 import { AiFillWindows } from "react-icons/ai";
 import { FaFirefoxBrowser } from "react-icons/fa";
 
-export default function Card() {
+export default function AllGames() {
     const [data, setData] = useState([]);
-    
+
     useEffect(() => {
         axios.get('/api/games').then(res => {
             const results = res.data;
@@ -16,16 +16,16 @@ export default function Card() {
     }, [])
 
     const getIcon = (platform) => {
-        switch(platform){
-            case "PC (Windows)": 
-                return <AiFillWindows/>;
+        switch (platform) {
+            case "PC (Windows)":
+                return <AiFillWindows />;
             case "Web Browser":
-                return <FaFirefoxBrowser/>;
+                return <FaFirefoxBrowser />;
             default:
                 return "Test"
         }
     }
-    
+
     return (
         <div className="bg-slate-200 min-h-[100vh]">
             <div className="container mx-auto -md:max-w-full max-w-5xl flex items-center flex-col px-6 sm:px-0">
@@ -34,7 +34,7 @@ export default function Card() {
                     <Link href="/"><a>Kembali </a></Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5 w-full">
-                    {data.map((game) => (
+                    {data?.map((game) => (
                         // cardnya
                         <div key={game.id} className="w-full pb-4 bg-white shadow-sm rounded-lg ">
                             <img src={game.thumbnail} alt="" className="w-full cover rounded-t-md mb-2" />
@@ -46,7 +46,7 @@ export default function Card() {
                                 <span className='flex items-center bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2'>{game.genre}</span>
                                 <span className='flex items-center bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 italic'>{getIcon(game.platform)} {game.platform}
                                 </span>
-                            
+
                             </div>
                         </div>
                     ))}

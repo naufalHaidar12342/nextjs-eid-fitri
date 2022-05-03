@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 export default function Home() {
   return (
-    <div className="container">
+    <div className="container " >
       <Head>
         <title>KanalGame</title>
         <link rel="icon" href="/favicon.ico" />
@@ -15,10 +15,11 @@ export default function Home() {
 
         <p className="description">
           A site to help you discover your next game to play
+          (hopefully)
         </p>
 
         <div className="grid">
-          <Link href="/card">
+          <Link href="/all-games">
             <a className="card">
               <h3>All free games, no filter &rarr;</h3>
               <p>Show me everything you got. Greed is good, right?</p>
@@ -39,21 +40,20 @@ export default function Home() {
             <h3>Examples &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
+          <Link href="/about">
+            <a className="card">
+              <h3>About &rarr;</h3>
+              <p>
+                Who made this site?
+              </p>
+            </a>
+          </Link>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
         </div>
       </main>
 
 
-      <footer>
+      <footer className='flex flex-wrap flex-col'>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -64,7 +64,7 @@ export default function Home() {
         </a>
 
         <a
-          className='flex flex-wrap flex-col' href="" target="_blank" rel='noopener noreferrer'>
+          className='' href="" target="_blank" rel='noopener noreferrer'>
           API provided by freetogame. You guys awesome.
         </a>
       </footer>
@@ -214,6 +214,6 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </div >
   )
 }
